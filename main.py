@@ -1,9 +1,29 @@
+import os
+from threading import Thread
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from pyrogram import Client, filters, idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 import string
 import random
 import time
+
+# ================= RENDER DUMMY SERVER (PORT BINDING FIX) =================
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b"Telegram Bot is running smoothly!")
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 8080))
+    server = HTTPServer(('0.0.0.0', port), RequestHandler)
+    server.serve_forever()
+
+# Dummy server ko background mein start karna
+Thread(target=run_dummy_server, daemon=True).start()
+# ========================================================================
 
 # ================= KHOOD KI DETAILS =================
 API_ID = 35237965  
