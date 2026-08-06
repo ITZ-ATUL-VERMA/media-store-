@@ -28,7 +28,7 @@ Thread(target=run_dummy_server, daemon=True).start()
 # ================= KHOOD KI DETAILS =================
 API_ID = 35237965  
 API_HASH = "ca376f2bed12f0efced887b7ae90e067"  
-BOT_TOKEN = "8745032512:AAE1aUo7_PlZJzy4rlGtj038M-EibtIlwcs"  
+BOT_TOKEN = "8745032512:AAGa0_i9P0o0weRxe-OcZYd_GFq-LVR4ZMI"  
 OWNER_ID = 5884320645  
 ADMIN_USERNAME = "KILLER_367"  # Bina '@' ke
 # ====================================================
